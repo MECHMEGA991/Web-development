@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multio Color Nav bar</title>
+    <style>
+        :root{
+            --text-color : white;
+            --bar-color : black;
+            --bodycolor: blue;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+           
+        }
+        nav{
+            background-color: var(--bar-color);
+            height: 60px;
+            width: auto;
+            padding: 10px;
+           
+
+        }
+        body{
+             background-color: var(--bodycolor);
+        }
+        ul {
+            display:flex;
+            justify-content: space-between;
+            /* justify-items: center; */
+            list-style: none;
+            color: var(--text-color);
+            padding:20px;
+        }
+       
+        button{
+            height: auto;
+            width: 80px;
+            
+        }
+        li a{
+            text-decoration: none;
+            color:var(--text-color);
+        }
+        li a:hover{
+            text-decoration: underline yellow;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Welcom To Our Website</li>
+            <li><a href="/link">Home</a></li>
+            <li><a href="/link">About</a></li>
+            <li><a href="/link">Sevices</a></li>
+            <li><a href="/link">Contact</a></li>
+            <li><input type="text" placeholder=" Search here"><button >Enter</button></li>
+        </ul>
+    </nav>
+</body>
+</html>

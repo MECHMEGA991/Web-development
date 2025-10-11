@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on Css selecters</title>
+    <style>
+        .box:first-child {
+            background-color:red;
+        }
+
+        /* .box:last-child{
+        background-color: aqua;
+       } */
+        /* .box:nth-child(even){
+        background-color: blue;
+       } */
+
+        /* 
+       .box::first-letter{
+        color: red;
+        font-size: 50px;
+       } */
+        /* .boxes * {
+            border: 2px solid black;
+        } */
+
+        /* .box::first-line {
+            color: purple;
+        } */
+/* 
+        ::selection{
+            background-color: rgb(186, 14, 132);
+            color: blueviolet; used when u select the text
+        } */
+
+
+        /* .box::after{
+            content:" this is after";
+             background-color: aqua;
+        }
+        .box::before{
+            content:"this is before";
+            background-color: aqua;
+        } */
+        .boxes ::placeholder{
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxes">
+        <div class="box">This is first</div>
+        <div class="box">This is second</div>
+        <div class="box">This is Third</div>
+        <input type="text" placeholder="HI this is byy">
+    </div>
+</body>
+
+</html>

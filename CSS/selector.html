@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* univesal selector */
+        *{
+            background-color: aqua;
+        }
+        /* class selector */
+        .box1{
+            background-color: blue;
+        }
+        /* id selector */
+        #box2{
+            background-color: red;
+        }
+        div{
+            background-color: yellow;
+        }
+        /* child selecter direct */
+        div > p{
+            background-color: antiquewhite;
+        }
+        /* desendent selector */
+        div p{
+            background-color: green;
+        }
+        /* Pseudo Selector */
+
+        /* after visited color change*/
+        a:visited{
+            color: red;
+        }
+        /* link color  */
+        a:link{
+            color: black;
+        }
+        a:active{
+            background-color: red;
+        }
+        a:hover{
+            background-color: yellow;
+        }
+        p:first-child{
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- There are Four types of selector -->
+    <h1 style="text-align: center;">Selectors</h1>
+    <div class="box1">
+        This is class box
+    </div>
+
+    <div id="box2">
+        This is id box
+    </div>
+
+    <div class="yellow">
+        this is parent 
+        <p>this is first child</p>
+        <p>This is second child</p>
+        
+    </div>
+
+    <a href="www.google.com">Google.com</a><br>
+    <a href="www.facebook.com">Facebook.com</a>
+
+
+</body>
+</html>

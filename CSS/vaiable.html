@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+    <style>
+        :root{
+            --color: red;
+            --seccolor: yellow;
+            --defpad: 25px;
+            --defopa: 0.7;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            opacity:var(--defopa);
+            list-style: none;
+            padding: var(--defpad);
+            background-color: lightgreen;
+            border: 2px solid black;
+            margin: 10px;
+        }
+        nav{
+            --color: blue;  /* their is we used local var by overwritting the variable */
+            background-color: var(--color)
+        }
+        p{
+            padding: var(--defpad);
+            background-color:var(--color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ea doloribus nisi, possimus magnam voluptatum quia, numquam recusandae nemo labore quas. Autem tempore officia maxime soluta nulla dolor tenetur quidem, accusantium illo! Eos voluptates perspiciatis nobis assumenda iste possimus fugiat pariatur iure repellat consequuntur est nulla quas necessitatibus, quam blanditiis.
+        </p>
+</body>
+</html>

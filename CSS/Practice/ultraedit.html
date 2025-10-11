@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Edit Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            height: 50px;
+            width: 50px;
+            background-color: yellow;
+            border: 3px solid black;
+            border-radius: 50%;
+            display: flex;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .font {
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+
+        }
+
+        .item ul {
+            gap: 50px;
+        }
+
+        nav ul li {
+            list-style: none;
+
+        }
+
+        nav ul li a {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        button {
+            color: black;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 5px;
+            height: 40px;
+            width: 100px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .right {
+            width: 300px;
+            padding: 0px;
+        }
+
+        .img {
+            margin: auto;
+            list-style-type: "🌐";
+            margin-left: 53px;
+        }
+
+        .search {
+            font-size: 20px;
+            position: relative;
+            top: 4px;
+        }
+
+        .body1 {
+            /* display: inline-block;
+            justify-content: center;
+            align-items: center; */
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .text {
+            font-family: poppins;
+            text-align: center;
+            font-size: 50px;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .second {
+            font-family: poppins;
+            text-align: center;
+            font-size: 30px;
+            padding: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .second button {
+            height: 52px;
+            width: fit-content;
+            font-size: 15px;
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgb(102, 176, 222);
+            color: white;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 11px;
+            margin-top: 39px;
+
+        }
+
+        .version {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .logo {
+            position: relative;
+            left: 155px;
+        }
+
+        .ver_text {
+            font-family: poppins;
+            margin-left: 160px;
+        }
+
+        .lan {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 300px 300px 300px;
+            grid-template-rows: 250px 250px 250px 250px;
+            row-gap: 25px;
+            column-gap: 25px;
+        }
+
+        .box {
+            font-family: poppins;
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+            height: 190px;
+            width: 230px;
+            border: 1px solid white;
+            background-color: rgb(245, 240, 240);
+        }
+
+        .box button {
+            height: 30px;
+            width: fit-content;
+            border: 1px solid white;
+            background-color: rgb(58, 209, 58);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .box p {
+            text-align: center;
+            overflow-wrap: break-word;
+            font-size: 8px;
+        }
+
+        .box-1 button {
+            margin-top: 20px;
+        }
+
+        .box:hover {
+            border: 1px solid rgb(102, 176, 222);
+            background-color: #e7f6ff;
+            transition: 0.5s ease-in-out;
+        }
+        /* @media only screen and(max-width: 800px) {
+            body{
+                .lan{
+                    background-color: aqua;
+                    grid-template-columns: 1fr;
+                }
+            }
+            
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="icon">
+                <div class="circle"><i><b>UE</b></i></div>
+                <div class="font">
+                    <b style="font-size: 28px;">Ultra Edit</b><br>
+                    <span style="display: block; margin-left: 5px;">by Embarcadero</span>
+                </div>
+            </div>
+            <div class="item">
+                <ul>
+                    <li><a href="/product">Product </a></li>
+                    <li><a href="/product">Pricing</a></li>
+                    <li><a href="/product">Resources</a></li>
+                    <li><a href="/product">Our company</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><button><a href="/download"><b>Download</b></a></button></li>
+                    <li class="img">English</li>
+                    <li><span class="search">&#128269;</span></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="body1">
+            <div class="text">
+                Download <strong>UltraEdit</strong> for Windows
+                <a href="/login"><img src="https://www.ultraedit.com/wp-content/uploads/2022/10/Reviews.png"
+                        alt="LOGO"></a>
+
+            </div>
+            <div class="second">
+                Download and try UltraEdit before you buy it! This download includes the full Windows version of the
+                text editor.
+                <br>
+
+                <button><a href="/Download"></a>DOWNLOAD MAC OR LINUX VERSION</a></button>
+            </div>
+        </div>
+
+        <div class="version">
+            <div class="logo">
+                <div class="circle"><i><b>UE</b></i></div>
+            </div>
+            <div class="ver_text">
+                <b style="font-size: 20px;">Download UltraEdit</b> v2025.0.0.39 (released 2025-08-06) | Latest changes
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div class="lan">
+            <div class="box box-1">
+                <b>English</b>
+                <br>
+                <br>
+                <br>
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-2">
+                <b>Deutsch</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;;">German</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-3">
+                <b>Italiano</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Italian</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-4">
+                <b>Español</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Spanish</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-5">
+                <b>français</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">French</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-6">
+                <b>Português brasileiro</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Brazilian Portuguese</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-7">
+                <b>日本</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Japanese</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-8">
+                <b>한국어</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Korean</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-9">
+                <b>华语</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Chinese</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+            <div class="box box-10">
+                <b>華語</b>
+                <br>
+                <br>
+                <p style="font-size: 14px;">Traditional Chinese</p>
+
+                <a href="/dow"><button>Download 64-bit</button></a>
+                <br>
+
+                <p>SHA256
+                    FC88DD0B44CF0A7DE31AE2C413D145E351ACCA7A6E7DF4A44BC4A34E5184378E</p>
+            </div>
+
+
+
+        </div>
+    </main>
+</body>
+
+</html>

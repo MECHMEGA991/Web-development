@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout design</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        header{
+             position: sticky;
+            top: 0px;
+        }
+        .cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            /* margin-top: 80px; */
+            background-color: aqua;
+        }
+
+        nav {
+            padding: 25px;
+
+            /* margin-bottom: 30px; */
+            background-color: black;
+           
+            width: 100%;
+        }
+
+        ul {
+            display: flex;
+            gap: 50px;
+            justify-content: space-around;
+            align-items: center;
+            margin-right: 30px;
+        }
+
+        ul li {
+            color: yellow;
+            list-style: none;
+            
+
+        }
+
+        button {
+            border-radius: 10px;
+            height: 20px;
+            width: 60px;
+        }
+
+        .search {
+            display: flex;
+            margin-right: 0px;
+        }
+
+        .a {
+            background-color: bisque;
+            border: 2px solid palevioletred;
+            height: 755px;
+            width: 755px;
+            margin: 20px;
+            text-align: center;
+            overflow: auto;
+            
+        }
+
+        .b {
+            background-color: bisque;
+            border: 2px solid palevioletred;
+            height: 755px;
+            width: 755px;
+            margin: 20px;
+            text-align: center;
+            overflow: auto;
+        }
+
+        .c {
+            background-color: bisque;
+            border: 2px solid palevioletred;
+            border-radius: 122px;
+            height: 200px;
+            width: 776px;
+            margin: auto;
+            text-align: center;
+            padding: 5px;
+            font-size: 65px;
+            overflow: auto;
+            text-overflow:ellipsis;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .orange{
+            background-color: orange;
+            position: fixed;
+            top: 700px;
+            right: 15px;
+
+            height: 50px;
+            width: 50px;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        footer {
+            background-color: black;
+            height: 100px;
+            width: 100%;
+            margin-top: 15px;
+            padding: 5px;
+
+        }
+
+        .foot li {
+            color: white;
+            list-style: none;
+            margin-left: 80px;
+
+        }
+
+        .foot {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <div class="search">
+
+                    <input type="text" placeholder=" Search"> <button>Search</button>
+                </div>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="cont">
+            <div class="a">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis consectetur vel officia eos in
+                quia doloremque, molestias repellat modi, magni iste magnam neque deserunt laudantium iure! Saepe
+                accusantium pariatur ad perspiciatis itaque in unde cum nemo eveniet nobis odit at libero voluptas
+                voluptatem vel numquam, vitae possimus neque expedita quas. Deserunt ducimus iusto dignissimos
+                voluptatem alias architecto? Eos vitae sed nulla aut aspernatur mollitia praesentium tenetur quos a?
+                Earum optio perspiciatis maiores cumque, sit necessitatibus, facere quisquam quidem, eveniet laborum
+                minima. Commodi pariatur ad inventore aperiam vel maxime assumenda ut voluptatem dolorem nostrum,
+                debitis voluptate, optio fuga recusandae deserunt velit?
+            </div>
+            <div class="b">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur est dignissimos nemo recusandae
+                excepturi tempore, repellat soluta cupiditate molestiae sed. Cum, corrupti. Suscipit quos quisquam atque
+                assumenda voluptatibus facilis dolor, reiciendis tenetur rerum veniam provident corporis dolorum! Dolor
+                nihil in vel facere mollitia veniam, deserunt fugiat consectetur, eligendi perferendis dolorum, officiis
+                architecto nemo vero atque repellendus incidunt? Molestiae consequatur officiis, veniam illo maxime
+                pariatur optio. Cupiditate exercitationem ut perferendis sed! Non, cum velit dolores aliquam voluptate
+                eos totam repudiandae fuga est perferendis quos fugit assumenda, provident unde quidem praesentium
+                explicabo nihil rerum sed inventore? Aspernatur maxime delectus culpa tempora quo asperiores quasi earum
+                aliquam magnam dolorem est alias beatae totam praesentium voluptates, quibusdam ut id, at, explicabo
+                amet harum a molestiae. Totam corrupti officiis rerum temporibus. Odit accusamus reiciendis quas dolor
+                magnam dolores omnis ex itaque necessitatibus libero nesciunt, a quasi asperiores ratione eaque
+                dignissimos quibusdam minus. Quos, eaque labore quibusdam cumque repellendus eius, laboriosam porro
+                explicabo debitis aperiam placeat accusamus voluptatem praesentium recusandae dolore? At dolore ducimus
+                velit asperiores quae perspiciatis cum facilis in. Atque a ab natus fugiat quisquam exercitationem
+                aperiam error, nemo voluptatem eius voluptate, facere praesentium temporibus. Possimus quos a officia
+                nulla earum beatae, odio libero.
+            </div>
+        </div>
+        <div class="c">
+            welcome to my first layout using html and css 
+        </div>
+        <div class="orange"></div>
+    </main>
+    <footer>
+        <div>
+            <ul class="foot">
+                <li>About</li>
+                <li>Contact</li>
+                <li>Home</li>
+                <li>Address</li>
+                <li>Phone</li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
