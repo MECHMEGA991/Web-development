@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    
+    <!-- write a program to calculate factorial of a number using for and reduce  -->
+    <script>
+        // let n = prompt("Enter a number ")
+        // console.log("Your Number is "+n)
+
+        // let fact=1;
+        // for(i=1;i<=n;i++){
+        //     fact=fact*i
+        // }
+
+        // console.log("Your Answer is "+fact)
+        // alert("Factorial of Number is " +fact)
+
+        // Using reduce 
+
+        function factorial(number){
+
+            let arr=Array.from(Array(number+1).keys()) // It returns array of a given number
+            console.log(arr.slice(1))
+
+            // Using reduce
+
+            let fact=arr.slice(1).reduce((x,y)=> x*y)
+
+            return fact;
+
+        }
+
+        console.log(factorial(5));
+
+    </script>
+
+</body>
+</html>
+

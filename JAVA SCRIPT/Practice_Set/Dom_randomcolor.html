@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice Random color in box</title>
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            margin: 25px;
+            padding:15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="box">BOX</div>
+            <div class="box">BOX</div>
+            <div class="box">BOX</div>
+            <div class="box">BOX</div>
+            <div class="box">BOX</div>
+        </div>
+
+    
+    <script>
+        //Given 5 boxes, Assign a random color and a random background to each box using dom concept
+
+        
+        // const obj={
+        //     1:"red",
+        //     2:"blue",
+        //     3:"yellow",
+        //     4:"green",
+        //     5:"orange"
+        // }
+
+        // let n=Math.floor(Math.random()*5)+1 ;
+        // console.log(n)
+        
+        // let n1=Math.floor(Math.random()*5)+1 ;
+        // console.log(n)
+
+        // let boxes=document.querySelectorAll(".box");
+        // console.log(boxes);
+
+        // boxes.forEach(i => {
+        //     i.style.background=obj[n]
+        // });
+        // boxes.forEach(i => {
+        //     i.style.color=obj[n1]
+        // });
+
+        // let boxes=document.querySelectorAll(".box")
+        // let boxes=document.getElementsByClassName("box")
+
+        let boxes=document.querySelector(".container").children
+        console.log(boxes)
+
+        // Important Formula
+        // a + rand ( b - a )
+
+        function getRandomColor(){
+
+            let val1= Math.ceil(0 + Math.random() * 255);
+            let val2= Math.ceil(0 + Math.random() * 255);
+            let val3= Math.ceil(0 + Math.random() * 255);
+
+            return `rgb(${val1},${val2},${val3})`
+        }
+        
+        Array.from(boxes).forEach((i)=>{
+            i.style.background=getRandomColor()
+            i.style.color=getRandomColor()
+        })
+
+    </script>
+    
+</body>
+</html>

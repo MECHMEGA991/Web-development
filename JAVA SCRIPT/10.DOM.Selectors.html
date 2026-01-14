@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Selectors,by name</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 50px;
+            width: 60px;
+            margin: 10px;
+            padding: 12px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box1.5</div>
+        <div class="box">box2</div>
+        <div class="box">box2.5</div>
+        <div id ="boxred" class="box">box3</div>  <!--  When we want to target particular element we used id  -->
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+    </div>
+    
+    <script>
+        console.log("Selectors")
+
+        let box=document.getElementsByClassName("box") // access by using class name
+        console.log(box)
+
+        // box[2].style.background="red"
+
+        let redbox=document.getElementById("boxred"); // accese by elementid
+        redbox.style.background="red"
+
+        // We can also use Query Selector
+
+        let green=document.querySelector(".box")
+        
+        // green.style.background="green" // It only selectmcolor first occurence box in class same name 
+      
+        
+        let allgreen=document.querySelectorAll(".box") // Return node list
+        console.log(allgreen) // It will return a array collection so to access them using for loop
+        
+        allgreen.forEach((green)=>{ 
+            green.style.background="green"
+        })
+        
+        // Using tag name 
+        let tagname=document.getElementsByTagName("div") // Return html collection
+        console.log(tagname)
+
+        // Matches ,closet and contains Methods
+
+        console.log(tagname[4].matches("div.box")) // True
+        console.log(tagname[4].matches("#redbox")) // false
+        
+        
+        console.log(tagname[4].closest("html")) // returns closest ancestors first check himself
+
+        console.log(document.querySelector(".container").contains(tagname[2])) // returns true it contains tagname
+
+        console.log(document.querySelector(".container").contains(tagname[0])) // returns true it contains himself
+
+        
+
+
+    </script>
+</body>
+</html>

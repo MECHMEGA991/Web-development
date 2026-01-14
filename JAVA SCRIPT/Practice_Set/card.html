@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            display: flex;
+            align-items:center;
+            height: 100px;
+            width: 900px;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: black;
+
+        }
+        
+        .box1{
+            
+            height: 70px;
+            width: 142px;
+            background-image: url("https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 5px;
+            padding: 11px;
+            border-radius: 8px;
+            position: relative;
+            background-color: white;
+
+        }
+        .duration{
+            position: absolute;
+            right: 3px;
+            bottom: 3px;
+            border-radius: 4px ;
+            background-color: black;
+            opacity: 0.8;
+            color: white;
+            font-size: 12px;
+            padding: 3px;
+            margin: 1px;
+            /* text-align: center; */
+        }
+        .box{
+            
+            height: 100px;
+            width: 700px;
+            /* background-color: rgb(171, 152, 152); */
+            margin: 5px;
+            padding: 2px;
+            /* font-size: 0px; */
+            color: white;
+        }
+        h5{
+            margin: 0px;
+            font-size:18px;
+            padding: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        p{
+            margin: 0;
+            font-size:12px;
+            padding: 5px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box1">
+            <div class="duration">
+                33:10
+        </div>
+        </div>
+        <div class="box">
+            <h5 id="title">Introduction to Backend | Sigma Web Dev video #1</h5>
+            <p id="views_months">CodeWithHarry 727k views 2 months ago</p>
+        </div>
+
+    </div>
+    
+    <script>
+        function createCard(title , cName , views , months , duration ){
+
+            let oldtitle=document.getElementById("title");
+            oldtitle.innerText=title
+
+            let dur=document.querySelector(".duration")
+            dur.innerHTML=duration;
+            
+            let p=document.getElementById("views_months")
+
+            // if(views>1000){
+            //     return 
+            // }
+            p.innerHTML=`${cName} ${views} ${months}monthsago`
+    
+
+
+        }
+         createCard("Introduction to Backend | Sigma Web Dev video #4","CodeWithHarry", 56000,7,"31:22")
+
+         createCard("Introduction to Backend | Sigma Web Dev video #3","CodeWithHarry", 56000,7,"31:24")
+
+        
+        // createCard("Introduction to Backend | Sigma Web Dev video #2","CodeWithHarry", 56000,7,"31:22",https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA")
+
+
+
+    </script>
+</body>
+
+</html>

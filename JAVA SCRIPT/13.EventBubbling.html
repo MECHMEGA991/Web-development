@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Event Bubbling</title>
+
+    <style>
+        .container{
+            height: 200px;
+            width: 400px;
+            border: 2px solid black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: red;
+            
+
+        }
+        .childContainer{
+            display: flex;
+            align-items: center;
+            margin: auto;
+            height: 130px;
+            width: 290px;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: blue;
+        }
+        .child{
+            display: flex;
+            align-items: center;
+            margin: auto;
+            height: 50px;
+            width: 130px;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="childContainer">
+            <div class="child">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // if u pressed child container then the event listner of their parent and their grandpa also activate to stop that we use eventobject.stoppropogation() 
+        let child=document.querySelector(".child")
+        let parent=document.querySelector(".childContainer")
+        let granpa=document.querySelector(".container")
+
+        child.addEventListener("click",(e)=>{
+            // e.stopPropagation();
+            alert("Child is pressed")
+        })
+
+        // Removing event listner
+        // child.removeEventListener("click",()=>{
+        //     // e.stopPropagation();
+        //     // alert("Child is pressed")
+        // })
+
+        
+        parent.addEventListener("click",(e)=>{
+            // e.stopPropagation()
+            alert("parent is pressed")
+        })
+
+        granpa.addEventListener("click",(e)=>{
+            e.stopPropagation()
+            alert("grandpa is pressed")
+        })
+
+         function getRandomColor(){
+
+            let val1= Math.ceil(0 + Math.random() * 255);
+            let val2= Math.ceil(0 + Math.random() * 255);
+            let val3= Math.ceil(0 + Math.random() * 255);
+
+            return `rgb(${val1},${val2},${val3})`
+        }
+
+        // SetInterval out 
+
+        // let a=setInterval(()=>{
+        //     parent.style.background=getRandomColor();
+
+        // } , 1000) // Every second to change
+
+        // console.log(a)
+        // clearInterval(a) // It will stop the set interval
+
+        // Set time out
+        // It will run only one time after a certain time 
+
+        let b=setTimeout(()=>{
+            child.style.background=getRandomColor();
+        },1000) // color change after this time only one time 
+
+        clearTimeout(b) // It will stop the settimeout
+
+
+    </script>
+    
+</body>
+</html>

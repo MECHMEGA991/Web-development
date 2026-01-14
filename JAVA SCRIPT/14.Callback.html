@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async javascript Call Back </title>
+</head>
+<body>
+    
+
+    <script>
+
+        // Asynchronous Javascript
+        console.log("Rahul is coder")  // first this print
+        console.log("Ramesh is ceder") // second this print
+
+        setTimeout((e)=>{ // fifth this print out
+            console.log("I am inside settimeout")
+        },2000)
+        setTimeout((e)=>{ // foruth this print out
+            console.log("I am inside settimeout 2")
+        },0)
+
+        console.log("The end")  // Third this print
+
+
+    </script>
+</body>
+</html>

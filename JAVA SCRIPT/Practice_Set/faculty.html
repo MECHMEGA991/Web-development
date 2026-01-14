@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Calculator</title>
+</head>
+<body>
+    
+    <script>
+        // Create a faulty calculator using Javascript
+        
+        // This faulty calculator does following:
+        // 1. It takes two number as input from the user
+        // 2. It performs wrong operations as follows:
+        
+        // + ------> -
+        // * ------> +
+        // - ------> /
+        // / ------> **
+        
+        // It performs wrong operation 10% of the times 
+        
+        // */
+
+        let n = Math.random()
+        console.log(n)
+        let a = prompt("Enter first Number ")
+        let b = prompt("Enter the Operatior ( +, -, *, /)")
+        let c = prompt("Enter second Number ")
+
+        let obj={
+            "+": "-",
+            "*": "+",
+            "-": "/",
+            "/": "**"
+        }
+        
+        // eval("2 + 3"); // returns 5
+
+       
+        // In JavaScript, eval is a built-in function that takes a string and executes it as JavaScript code.
+        // It is dangerous to use so do simple math logic insteat of eval
+
+
+
+        if(n>0.1){
+            // Perform correct calculation
+            console.log(`The result is ${a} ${b} ${c}`)
+            alert(`The result is ${eval(`${a} ${b} ${c}`)}`)
+
+        }
+        else{
+            // Perform Incorrect calculation
+            b=obj[b]
+             alert(`The result is ${eval(`${a} ${b} ${c}`)}`)
+    }
+
+// console.log(n)
+
+// function fault_Calc(a,b){
+
+// let n=Math.random()
+    
+//  if(n>0.1){
+//     console.log("Addition of Two Number is ",a+b)
+//     console.log("Multiplication of Two Number is ",a*b)
+//     console.log("Subtraction of Two Number is ",a-b)
+//     console.log("Division of Two Number is ",a/b)
+//  }
+//  else{
+//     console.log("Addition of Two Number is ",a-b)
+//     console.log("Multiplication of Two Number is ",a+b)
+//     console.log("Subtraction of Two Number is ",a/b)
+//     console.log("Division of Two Number is ",a**b)
+
+//  }
+// }
+
+// fault_Calc(2,2)
+
+        
+    </script>
+</body>
+</html>

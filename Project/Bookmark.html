@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark Saver</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 500px;
+            margin: auto;
+            
+        }
+        input, #btn{
+            width: 100%;
+            margin: 5px 0px;
+            padding: 10px;
+        }
+        
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+
+        ul{
+            margin-top: 0px;
+            list-style: none;
+        }
+        .box{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>🔖 Bookmark Saver</h1>
+    <input id="Name" type="text" placeholder="Website Name">
+    <input id="Url" type="url" placeholder="http://example.com">
+    <button id="btn" >Submit Bookmark</button>
+    
+    <div class="box">
+    <h3>Bookmark List</h3>
+    <button id="clearbtn2">clear</button>
+    </div>
+    <ul id="List"></ul>
+    </div>
+
+    <script>
+
+    let WebName=document.getElementById("Name")
+    let WebUrl=document.getElementById("Url")
+    let SavedBtn=document.getElementById("btn")
+    let SavedList=document.getElementById("List")
+    let clearbtn=document.getElementById("clearbtn2")
+    
+
+    let bookmarks= JSON.parse(localStorage.getItem("bookmarks")) || [];
+
+    // console.log(WebName)
+    // console.log(WebUrl)
+    // console.log(SavedBtn)
+    // console.log(SavedList)
+    // console.log(clearbtn)
+
+    function displayBookmarks(){
+
+        SavedList.innerHTML="";
+        bookmarks.forEach((bookmark , index)=> {
+
+            let li=document.createElement("li");
+            li.innerHTML=`
+            <a href="${bookmark.Url}" target="_blank">
+                ${bookmark.name}
+                </a>
+            `;
+        
+            SavedList.appendChild(li);
+            
+        });
+    }
+
+    SavedBtn.addEventListener("click",()=>{
+
+        if(WebName.value === "" || WebUrl.value==="" ){
+            alert("Please Fill Valid Input")
+            return;
+        }
+
+        let bookmark={
+            name : WebName.value,
+            Url  : WebUrl.value
+        };
+
+        bookmarks.push(bookmark);
+        localStorage.setItem("bookmarks",JSON.stringify(bookmarks));
+
+         WebName.value="";
+         WebUrl.value="";
+
+
+        displayBookmarks()
+
+
+    })
+
+    clearbtn.addEventListener("click",()=>{
+
+        if(confirm("Are u sure to delete all the bookmarks")){
+
+        // clear Bookmark array
+        bookmarks=[];
+        // Remove from storage;
+        localStorage.removeItem("bookmarks")
+        //clear displayed list
+        displayBookmarks();
+        }
+
+    })
+
+
+    displayBookmarks()
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting and Removing Elements</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 120px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div style="color: red;" data-conceptby="ansh" data-createdby="ankush" class="container bg-green">
+        <div class="box">I am a box</div>
+        <div class="box">I am second box</div>
+    </div>
+
+<script>
+
+let box=document.querySelector(".container")
+console.log(box)
+
+console.log(box.innerHTML)// To shows the inner html of box
+// console.log(box.innerHTML="Hey this is change") // we can change the inner html
+
+console.log(box.outerHTML) // It shows the outer part
+
+console.log(box.tagName)// It show the tag name 
+console.log(box.nodeName)// It show the tag name 
+
+console.log(box.textContent)// It show the inner text 
+
+// console.log(box.hidden=true) // We can hide the div using hidden and make it true
+
+// Attribute Method
+
+console.log(box.hasAttribute("style")) // It tells that if this div has attributres or not
+
+console.log(box.getAttribute("style"))
+
+// console.log(box.setAttribute("style","color:blue"))
+
+// console.log(box.removeAttribute("style")) // remove arrtibutes
+
+console.log(box.attributes) // It get collection of all the attributes 
+
+console.log(box.dataset)
+
+// Insertion Method 
+
+// node Insertion
+
+let div=document.createElement("div")
+div.innerHTML="I have been inserted <b>Inserted</b>"
+div.setAttribute("class","created")
+
+// box.append(div)  // insert at the end of container 
+// box.prepend(div)     // insert at start of container
+// box.before(div)     // insert at the beginning in body before container
+// box.after(div)     // insert at the last in the body after container
+// box.replaceWith(div)     // It will replace node with the given node
+
+// Insert Adjacent Html (string )
+
+let cont=document.querySelector(".container")
+// cont.insertAdjacentHTML("afterbegin","Hi i am inserted using adjacent Html method <b>Inserted</b>")
+cont.insertAdjacentHTML("beforebegin","Hi i am inserted using adjacent Html method <b>Inserted</b>")
+cont.insertAdjacentHTML("afterend","Hi i am inserted using adjacent Html method <b>Inserted</b>")
+// cont.insertAdjacentHTML("beforeend","Hi i am inserted using adjacent Html method <b>Inserted</b>")
+
+// Node Removal
+
+document.querySelector(".box").remove()
+// box.remove()
+
+
+console.log(document.querySelector(".container").classList.add("Hlo"))
+
+console.log(document.querySelector(".container").classList)
+
+console.log(document.querySelector(".container").classList.remove("Hlo"))
+
+// Toggle : like a switch if it opens it close if it close it open add class or remove class
+
+console.log(document.querySelector(".container").classList.toggle("red"))
+
+
+
+
+</script>
+    
+</body>
+</html>

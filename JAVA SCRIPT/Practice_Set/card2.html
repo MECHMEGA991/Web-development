@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card editor</title>
+
+    <style>
+      .card {
+        background-color: black;
+        height: 140px;
+        width: 800px;
+        margin: 5px;
+        padding: 10px;
+        display: flex;
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .image img {
+        margin: 5px;
+        height: 130px;
+      }
+      .image {
+        position: relative;
+      }
+      .txt {
+        /* background-color: rgb(194, 16, 16); */
+        width: 80vw;
+        margin-left: 10px;
+        margin-top: 0px;
+      }
+      .image .cap {
+        position: absolute;
+        padding: 5px;
+        margin: 8px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 10;
+        background-color: black;
+        border-radius: 7px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="image">
+          <img
+            src="https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA"
+            alt="Not found"
+          />
+          <div class="cap">33:10</div>
+        </div>
+        <div class="txt">
+          <h3>Introduction to Backend | Sigma Web Dev video #1</h3>
+          <p>codewithharry . 727k views . 2 months ago</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function createCard(title, chname, views, months, duration, thumbnail) {
+        let viewstr;
+        if (views < 1000) {
+          viewstr = views;
+        } else if (views < 1000000) {
+          viewstr = views / 1000 + "k";
+        } else if(views>1000000) {
+          viewstr = views / 1000000 + "M";
+        }
+
+        let html = `<div class="card">
+        <div class="image">
+            <img src= ${thumbnail} alt="Not found">
+            <div class="cap">${duration}</div>
+        </div>
+        <div class="txt">
+            <h3>${title}</h3>
+            <p>${chname} . ${viewstr} views . ${months} months ago</p>
+        </div>
+    </div>`;
+
+        let container = document.querySelector(".container");
+
+        container.insertAdjacentHTML("beforeend", html);
+      }
+
+      createCard(
+        "Introduction to Backend | Sigma Web Dev video #2",
+        "CodeWithHarry",
+        500000000,
+        7,
+        "31:22",
+        "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA"
+      );
+      createCard(
+        "Introduction to Backend | Sigma Web Dev video #2",
+        "CodeWithHarry",
+        56,
+        7,
+        "31:22",
+        "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA"
+      );
+      createCard(
+        "Introduction to Backend | Sigma Web Dev video #2",
+        "CodeWithHarry",
+        56,
+        7,
+        "31:22",
+        "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA"
+      );
+    </script>
+  </body>
+</html>

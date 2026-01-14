@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Event Listner and Buttons</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="box">Hey i am a box</div>
+        <button id="btn">Click Me</button>
+    </div>
+
+    <script>
+        let button=document.getElementById("btn")
+        console.log(button)
+
+        
+        // There are many type of clicking button see in Mdn 
+
+        // Single click
+        button.addEventListener("click",()=>{
+            //  alert("I was clicked")
+            document.querySelector(".box").innerHTML="You were Clicked content changed"
+            document.querySelector(".box").style.color="red"
+        })
+
+        // Double click 
+        button.addEventListener("dblclick",()=>{
+            alert("Double click")
+        })
+
+        // Right click
+        button.addEventListener("contextmenu",()=>{
+            alert("Dont right click")
+        })
+
+        //Keyboards events 
+        //keydown whenever key pressed in console it shows
+        document.addEventListener("keydown",(e)=>{ // e is event object
+            console.log(e.key)
+        })
+    </script>
+    
+</body>
+</html>

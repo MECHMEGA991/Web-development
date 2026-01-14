@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="ele">
+        <input type="text" id="inp" placeholder="Enter the Value ">
+    </div>
+    <button onclick="adding()">Submit</button>
+    <div class="res"></div>
+    <script>
+
+        let arr=[];
+        function adding(){
+
+            
+            let value=document.getElementById("inp").value
+
+            if(value==0){
+
+                document.querySelector(".res").textContent+="Input Stopped"
+                document.getElementById("inp").disabled="true";
+                document.querySelector("button").disabled="true";
+
+
+            }
+
+            arr.push(value);
+          
+
+        
+            document.querySelector(".res").textContent=arr.join(", ");
+
+            document.getElementById("inp").value=""
+            
+
+
+        }
+
+    </script>
+    
+</body>
+</html>

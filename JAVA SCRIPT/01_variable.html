@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable</title>
+</head>
+<body>
+
+    <script>
+
+        console.log("This is variable")
+        var a=5
+        var b=9.5
+        var c="Harry"
+        console.log(a+b+10)
+        console.log(c)
+        console.log(typeof a , typeof b,typeof c)
+
+        // const a = 6
+        // a = a+1 // Not allowed because a is const
+
+        // let is used because its scope is with in range of brackets
+        // var scope globally 
+
+        {
+            let a = 10
+            // var a = 9
+            console.log(a)  // its value is 10 
+        }
+
+        console.log(a) // if we use var its value 9 but if we use let its value 5
+
+        let x = "Harry"
+        let y = 8
+        let z = 9.596
+        let p = undefined
+        const q = false
+        let r = null
+
+        console.log(x,y,z,p,q,r)
+        console.log(typeof x,typeof y,typeof z,typeof p,typeof q,typeof r)
+
+        // what is the type of NULL
+        // Null is an object because in previous it defines as null many concept are based on convection so we cant change or some coder says its just a mistake
+
+        // IN java script object are just key value pairs
+
+        let o={
+            name :"Harry",
+            "Job role": "Coder",
+            "Is coder": true
+        };
+        console.log(o)
+        // We can alter object
+        o.salary="54000crs";
+        console.log(o);
+
+    </script>
+    
+</body>
+</html>
