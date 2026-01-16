@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      console.log("This is Promise ");
+
+      let prom1 = new Promise((resolve, reject) => {
+        let n = Math.random();
+        if (n < 0.5) {
+          reject("Number is not supportable");
+        } else {
+          setTimeout((e) => {
+            console.log("Yes i am done ");
+            console.log(n);
+            resolve("Harry");
+          }, 3000);
+        }
+      });
+
+      let prom2 = new Promise((resolve, reject) => {
+        let n = Math.random();
+        if (n < 0.5) {
+          reject("Number is not supportable");
+        } else {
+          setTimeout((e) => {
+            console.log("Yes i am done ");
+            console.log(n);
+            resolve("Harry2");
+          }, 2000);
+        }
+      });
+
+      // .then  = Used to handle a fulfilled (resolved) promise.
+
+      // .catch = Used to handle a rejected promise.
+      
+      // .finally = Runs always, whether the promise is resolved or rejected.
+
+      // .all =   waits for all promises to resolve and rejects if any promise fails.   It is a static method 
+
+      prom1
+        .then((a) => {
+          console.log(a);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(()=>{   // It only use to run, not to handle resolve and reject
+            console.log("Cleanup is done")
+        })
+      
+        let prom3=Promise.all([prom1 , prom2])
+        prom3.then((a)=>{
+            console.log(a)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+
+        // .allSettled(prom1,prom2) = waits for all promises to settle and returns both success and failure results. It also give the status of all promise
+
+        let p4=Promise.allSettled([prom1,prom2])
+        p4.then(a=>{
+            console.log(a);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+
+        // Promise.race() returns the result of the FIRST promise that settles (settles = resolve or reject)
+
+        let p5=Promise.race([prom1,prom2])
+        p5.then((resolve)=>{
+            console.log(resolve);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+
+        // Promise.any() returns the FIRST fulfilled (resolved) promise
+
+        let p6=Promise.any([prom1,prom2])
+        p6.then((resolve)=>{
+            console.log(resolve)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+
+//          Method	                         Purpose	                  Output
+//      Promise.resolve(value)	    Create a fulfilled promise  	resolves with value
+//      Promise.reject(reason)  	Create a rejected promise   	rejects with reason
+
+
+      // let promise=new Promise((resolve,reject)=>{
+      //     let sucess=true;
+      //     if(sucess){
+      //         resolve("Task is completed");
+
+      //     }
+      //     else{
+      //         reject("Task failed")
+      //     }
+      // });
+
+      // promise.then(
+      // (result)=>console.log(result),
+      // (error)=>console.log(error)
+
+      // )
+
+      // Promise methods
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Bulb</title>
+
+    <style>
+
+        body{
+            max-width: 300px;
+            margin: auto;
+        }
+
+        .container{
+            width: 300px;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            /* background-color: yellow; */
+        }
+    
+        /* Light effect */
+        .container.on{
+            background-color: yellow;
+            box-shadow: 0 0 100px yellow;
+        }
+        .box{
+            height: 200px;
+            width: 120px;
+            border: 2px solid black;
+            position: absolute;
+            top: 390px;
+            left: 90px;
+            align-self: center;
+            z-index: 10;
+            background-color: grey;
+            margin: auto;
+        }
+        .box1{
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding: 13px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Glowing Bulb</h1>
+    <div id="blb" class="container">
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+    </div>
+    <script>
+
+        let bulb=document.getElementById("blb")
+        console.log(bulb)
+
+        bulb.addEventListener("click",()=>{
+
+            bulb.classList.toggle("on");
+
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async javascript Call Back </title>
-</head>
-<body>
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async javascript/Call Back</title>
+  </head>
+  <body>
     <script>
+      // Asynchronous Javascript Asynchronous JavaScript means JavaScript can start a task and continue executing other code without waiting for that task to finish.
 
-        // Asynchronous Javascript
-        console.log("Rahul is coder")  // first this print
-        console.log("Ramesh is ceder") // second this print
+      // JavaScript continues running without waiting.
 
-        setTimeout((e)=>{ // fifth this print out
-            console.log("I am inside settimeout")
-        },2000)
-        setTimeout((e)=>{ // foruth this print out
-            console.log("I am inside settimeout 2")
-        },0)
+      console.log("Rahul is coder"); // first this print
+      console.log("Ramesh is ceder"); // second this print
 
-        console.log("The end")  // Third this print
+      setTimeout((e) => {
+        // fifth this print out
+        console.log("I am inside settimeout");
+      }, 2000);
+      setTimeout((e) => {
+        // foruth this print out
+        console.log("I am inside settimeout 2");
+      }, 0);
 
+      console.log("The end"); // Third this print
 
+    // Callback = function passed to another function
+    // Pyramid of Doom
+
+    // function greet(name, callback) {
+    //     console.log("Hello " + name);
+    //     callback();
+    //   }
+
+    //   function sayBye() {
+    //     console.log("Goodbye!");
+    //   }
+
+    //   greet("John", sayBye);
+
+    const greet=((name,callback)=>{
+        console.log("Hellow "+name)
+        callback();
+    })
+
+    const saybye=(callback)=>{
+        console.log("Good Bye")
+        callback();
+    }
+    const seeulater=(callback)=>{
+        console.log("See U Later")
+        callback()
+    }
+    const la=()=>{
+        console.log("Nothing")
+    }
+
+    greet("Ankush",()=>saybye(()=>seeulater(la)))
     </script>
-</body>
+  </body>
 </html>

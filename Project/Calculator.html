@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        max-width: 500px;
+        margin: auto;
+        background-color: rgb(0, 255, 255);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(50px, 1fr));
+        grid-template-rows: repeat(5, auto);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* background-color: black; */
+      }
+      button {
+        padding: 15px;
+        border: none;
+        font-size: 35px;
+        font-weight:bolder;
+        color: white;
+        background-color: grey;
+        border: 2px solid black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        /* border-radius: 500px; */
+      }
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 30px;
+        text-align: right;
+        border: 2px solid black;
+        overflow: hidden;
+      }
+      button:hover{
+        background-color: rgb(147, 143, 143);
+      }
+      .oper-btn:hover{
+        background-color: rgb(251, 185, 63);
+      }
+      .oper-btn:active{
+          background-color: rgb(135, 88, 1);
+        }
+        button:active{
+          background-color: rgb(31, 27, 27);
+      }
+      .oper-btn{
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style=" font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; font-size: 55px;">Calculator</h1>
+    <input id="in" type="text" />
+    <div class="container">
+      <button onclick="calc('+')" class="oper-btn">+</button>
+      <button onclick="calc('9')">9</button>
+      <button onclick="calc('8')">8</button>
+      <button onclick="calc('7')">7</button>
+      <button onclick="calc('-')" class="oper-btn">-</button>
+      <button onclick="calc('6')">6</button>
+      <button onclick="calc('5')">5</button>
+      <button onclick="calc('4')">4</button>
+      <button onclick="calc('*')" class="oper-btn">*</button>
+      <button onclick="calc('3')">3</button>
+      <button onclick="calc('2')">2</button>
+      <button onclick="calc('1')">1</button>
+      <button onclick="calc('/')" class="oper-btn">/</button>
+      <button onclick="calc('0')">0</button>
+      <button onclick="calc('.')">.</button>
+      <button onclick="cleardisplay()">cls</button>
+      <button onclick="calculate()" class="oper-btn">=</button>
+    </div>
+
+    <script>
+
+      const display=document.getElementById("in")
+
+      function calc(input){
+          display.value+=input;
+      }
+
+      function cleardisplay(){
+        display.value=""
+      }
+
+      function calculate(){
+        display.value=eval(display.value)
+      }
+    </script>
+  </body>
+</html>
