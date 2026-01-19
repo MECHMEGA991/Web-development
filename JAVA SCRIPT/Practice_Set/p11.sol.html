@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The array filter</title>
+
+    <!-- 11. The Array Filterer: You are building a search feature for your e-commerce site. Write a function named filterProducts that takes an array of product objects and a filter criterion. The function should return a new array containing only the products that match the filter criterion. -->
+  </head>
+  <body>
+    <script>
+
+          function filterProducts(product,criterion){
+
+              return product.filter(product=>{
+                  return Object.keys(criterion).every(key=>product[key] ===criterion[key]);
+              })
+
+          }
+
+          const products=[
+              {name : "Laptop",category :"Electronics",price:1000},
+              { name: "Phone", category: "Electronics", price: 500 },
+              { name: "Shirt", category: "Clothing", price: 50 },
+              { name: "Shoes", category: "Clothing", price: 80 }
+          ]
+
+        // Filter by categories
+
+        const electronics=filterProducts(products,{category :"Electronics"})
+        console.log(electronics);
+    </script>
+  </body>
+</html>

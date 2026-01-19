@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handaling</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("Enter First Number ");
+      let b = prompt("Enter Second number ");
+
+      if (isNaN(a) || isNaN(b)) {
+        throw "Invalid Input";
+      }
+      let sum = parseInt(a) + parseInt(b);
+
+    //   try {
+    //     console.log(sum * x);
+    //   } catch (Err) {
+    //     console.log("Please Enter a valid NUmber");
+    //   } finally {
+    //     console.log("cleanup");
+    //   }
+      function main(){
+      try {
+        console.log(sum * x);
+        return true
+      } catch (Err) {
+        console.log("Please Enter a valid NUmber");
+        return false
+      } finally {
+        console.log("cleanup");
+      }
+    }
+    // When we inside in the function finally will work always but when we write it normal console log it only returns true not the line 
+    // so we use finally to cleanup our files 
+    let c =main()
+    console.log(c);
+
+
+    </script>
+  </body>
+</html>

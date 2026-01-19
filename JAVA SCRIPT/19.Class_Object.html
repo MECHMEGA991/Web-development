@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class & Objects</title>
+  </head>
+  <body>
+    <script>
+      // It is the simple using of Prototype that in a object there are more prototype
+      // let obj={
+      //     1:"Rahul"
+      // }
+      // console.log(obj)
+
+      // let animal={
+      //     eats:true
+      // }
+      // let rabbit={
+      //     jump:true
+      // }
+
+      // rabbit.__proto__=animal; // Sets rabbit.[[Prototype]]=animal
+
+      // Classs
+
+      class animal {
+        constructor(name) {
+          // Can pass arguments
+          this.name = name;
+          console.log("Animal is created");
+        }
+
+        eats() {
+          console.log("Khata hoo");
+        }
+        jump() {
+          console.log("Kood ta hoo");
+        }
+      }
+      class lion extends animal {
+        // extends keywors use to inheritance
+
+        constructor(name) {
+          // Can pass arguments
+          super(name); // when u pass a constructor u call lion constructor using super
+          this.name = name;
+          console.log("Animal is created and he is a lion");
+        }
+        eats() {
+          // Method overloading using same function
+          super.eats(); // It just overide the lion by animals eats
+          console.log("Kha rha hoo non-veg");
+        }
+      }
+
+      let a = new animal("Bunny");
+      console.log(a);
+
+      let l = new lion("Sher");
+      console.log(l);
+
+
+    //   Instanceof operator allows to check whether an object belongs to a certain class or not
+    //   l instanceof animal ==> True
+    //   l instanceof lion   ==> True
+    //   a instanceof lion   ==> False
+    </script>
+  </body>
+</html>

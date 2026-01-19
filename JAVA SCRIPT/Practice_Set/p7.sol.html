@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage Manager</title>
+
+    <style>
+      .box {
+        border: 2px solid black;
+        padding: 10px;
+        
+      }
+    </style>
+  </head>
+
+  <!-- 7. The Local Storage Manager: You are working on a note-taking app, and you want to implement a function named saveNoteToLocalStorage that takes a note object and saves it to the browser's local storage. -->
+
+  <body>
+    <h1>Note Adder</h1>
+    <input type="text" placeholder="Enter Your Note" />
+    <button>Add Note</button>
+    <br />
+    <div class="box"></div>
+
+    <script>
+      let inp = document.querySelector("input");
+      let btn = document.querySelector("button");
+      let out = document.querySelector(".box");
+
+      let notes=JSON.parse(localStorage.getItem("notes")) || [];
+      renderNotes();
+
+
+      btn.addEventListener("click", () => {
+          if(inp.value==""){
+              alert("Enter a Valid Value")
+              return;
+          }
+
+          notes.push(inp.value);
+          localStorage.setItem("notes",JSON.stringify(notes));
+          renderNotes();
+          inp.value="";
+
+        });
+          function renderNotes(){
+            out.innerHTML="";
+            notes.forEach(note => {
+                out.innerHTML+=note + "<br>";
+            });
+          }
+
+    </script>
+  </body>
+</html>

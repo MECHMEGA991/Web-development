@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async and Await</title>
+  </head>
+  <body>
+
+     <!-- settled = It means resolve or rejcect
+     resolve = It means promise has resolved settled
+     reject  = It means promise has rejected not settled -->
+    
+
+    <script>
+      console.log("Async and Await");
+
+      // Simulate getting data from a Server
+
+    //   async function getdata() {
+    //     return new Promise((resolve, reject) => {
+    //       setTimeout(() => {
+    //         resolve(455);
+    //       }, 3000);
+    //     });
+    //   }
+
+      async function getdata() {
+       
+        // let x= await fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+        // let data = await x.json()
+        // let data = await x.text() // We can use .text method to get in text mode 
+        // console.log(data)
+        // return data;
+
+        // Post Request 
+
+        let x = await fetch('https://jsonplaceholder.typicode.com/todos/1',{
+
+                            method: 'POST',
+                            body: JSON.stringify({
+                                title:'foo',
+                                body:'bar',
+                                userId:1,
+                            }),
+                            headers: {
+                                'Content-type': 'application/json; charset=UTF-8',
+                            },
+        })
+
+        let data=await x.json()
+        return data
+
+
+
+      }
+
+      async function main() {
+        console.log("Loading Modules");
+
+        console.log("Do Something else");
+
+        console.log("Load Data");
+
+        let data = await getdata();
+
+        console.log(data);
+
+        console.log("Process Data");
+
+        console.log("task 2");
+      }
+
+      main();
+
+      // First approach is this using promise.then
+
+      // data.then((e)=>{
+
+      //     console.log(data)
+
+      //     console.log("Process Data");
+      // })
+    </script>
+  </body>
+</html>

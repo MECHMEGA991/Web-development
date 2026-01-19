@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Vowel Counter</title>
+  </head>
+  <!-- 6. The Vowel Counter: You need to create a function that counts the number of vowels in a given string. Consider both uppercase and lowercase vowels. -->
+  <body>
+    <script>
+    //   function vowel(str = "") {
+    //     let count = 0;
+
+    //     for (let i = 0; i < str.length; i++) {
+    //       if (
+    //         str[i] == "a" ||
+    //         str[i] == "A" ||
+    //         str[i] == "e" ||
+    //         str[i] == "E" ||
+    //         str[i] == "i" ||
+    //         str[i] == "I" ||
+    //         str[i] == "o" ||
+    //         str[i] == "O" ||
+    //         str[i] == "u" ||
+    //         str[i] == "U"
+    //       ) {
+    //         count++;
+    //       }
+    //     }
+
+    //     return count;
+    //   }
+    //   console.log("Length of Vowels is " + vowel("HellowiuA"));
+
+      // Using regex
+
+    //   function vowel(str=""){
+
+    //     let matches=str.match(/[aeiou]/gi) // g= global match all occurance, i = igonore case (So Upper case(A,E...)) are countd
+
+    //     return matches ? matches.length : 0;
+    //   }
+    //    console.log("Length of Vowels is " + vowel("HellowiuA"));
+      
+
+       // using includes
+    //    function vowel(str=""){
+
+    //     const vowel=['a','e','i','o','u'];
+    //     let count=0;
+    //     for (let i = 0; i < str.length; i++) {
+           
+    //         if(vowel.includes(str[i].toLowerCase())){
+    //             count++;
+    //         }
+            
+    //     }
+    //     return count;
+
+        
+    //   }
+    //    console.log("Length of Vowels is " + vowel("HellowiuA"));
+
+       // using filter
+
+        function vowel(str=""){
+        const vowel=['a','e','i','o','u'];
+        return [...str]
+
+        .filter(char=>vowel.includes(char.toLowerCase())).length
+
+        return str;
+        
+      }
+       console.log("Length of Vowels is " + vowel("HellowiuA"));
+
+      
+    
+    </script>
+  </body>
+</html>

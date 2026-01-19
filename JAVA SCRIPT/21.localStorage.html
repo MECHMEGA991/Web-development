@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <!-- localStorage is a web API provided by browsers to store key-value pairs on the client side.
+
+    Data is stored persistently, meaning it remains even after the browser is closed or the computer restarts.
+
+    Only strings can be stored. Non-string data like objects or arrays need to be converted (usually with JSON.stringify()). -->
+
+    <script>
+      // Setting Item in local storage
+
+      localStorage.setItem("username", "Alice");
+      console.log(localStorage);
+
+      //Getting Item in local storage
+      let data = localStorage.getItem("username");
+      console.log(data);
+
+      // Removing Item in local storage
+      // localStorage.removeItem("username")
+      console.log(localStorage);
+
+      // Clear all the Items in local Storage
+
+      // localStorage.clear()
+      // console.log(localStorage);
+
+      // Check If a Key exists
+      if(localStorage.getItem("username")){
+        console.log("User Exsits")
+      }
+
+
+      // We Cant store Objects and Arrays in location directly we 
+      // We use Stringfy => to convert give objects/arrays in string first;
+      // We use Parse =>  When we retrive objects/array to convert it again object 
+
+
+      const  obj={
+        name:"Ankush",
+        age : "18"
+      };
+
+      // Set item using stringify
+      localStorage.setItem("obj",JSON.stringify(obj));
+
+      // Get item using parse
+      
+      let store=JSON.parse(localStorage.getItem("obj"))
+      console.log(store)
+
+      console.log(store.name)
+      console.log(store.age)
+
+      // Iteratable local storage
+
+      for(let i=0;i<localStorage.length;i++){
+        const key=localStorage.key(i);
+        const value=localStorage.getItem(key)
+        console.log(key,value)
+      }
+
+      // Using for each loop
+      Object.keys(localStorage).forEach(key=>{
+        const value=localStorage.getItem(key);
+        console.log(key,value)
+      })
+     
+    </script>
+  </body>
+</html>

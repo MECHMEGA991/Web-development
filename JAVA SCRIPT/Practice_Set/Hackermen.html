@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacker man</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: rgba(14, 185, 14, 0.866);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- create a Hacking simulator which has green background and it shows these message with random delay of 1 to 7 seconds
+
+Initializing Hacking...
+Reading Your File... 
+Passwords files Detected...
+Sending all passwords and personal files to server... 
+cleaning up... 
+
+The three dots must blink so that it looks like a real terminal -->
+
+    <h1>Hacker Man</h1>
+
+    <div class="box"></div>
+
+    <script>
+      const msg = [
+        "Initializing Hacking",
+        " Reading Your File... ",
+        " Passwords files Detected...",
+        "Sending all passwords and personal files to server... ",
+        " cleaning up... ",
+      ];
+
+      function delay() {
+        let n = Math.floor(Math.random() * (7000 - 1000 + 1)) + 1000;
+        return n;
+      }
+      let box = document.querySelector(".box");
+      console.log(box);
+
+      async function print(msg) {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            box.innerHTML+=msg +"<br>";
+            resolve()
+          }, delay());
+        });
+      }
+
+      (async function main() {
+        for(let i of msg){
+            await print(i)
+        }
+      })();
+
+    
+      console.log(delay());
+    </script>
+  </body>
+</html>
