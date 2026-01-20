@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #121212;
+  color: white;
+}
+
+.app {
+  display: flex;
+  height: calc(100vh - 90px);
+}
+
+.sidebar {
+  width: 220px;
+  background: #000;
+  padding: 20px;
+}
+
+.logo {
+  color: #1DB954;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #b3b3b3;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.sidebar nav a:hover {
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.song-card {
+  background: #181818;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.song-card:hover {
+  background: #282828;
+}
+
+.song-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.song-card h4 {
+  margin-top: 10px;
+}
+
+.song-card p {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.player {
+  height: 90px;
+  background: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Music</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <h1 class="logo">MyMusic</h1>
+    <nav>
+      <a>🏠 Home</a>
+      <a>🔍 Search</a>
+      <a>🎵 Library</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <h2>Featured Songs</h2>
+    <div class="songs">
+      <div class="song-card">
+        <img src="cover.jpg">
+        <h4>Song Title</h4>
+        <p>Artist</p>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<footer class="player">
+  <div class="player-info">
+    <img src="cover.jpg">
+    <div>
+      <h4>Song Title</h4>
+      <p>Artist</p>
+    </div>
+  </div>
+
+  <div class="controls">
+    ⏮ ▶ ⏭
+  </div>
+
+  <input type="range">
+</footer>
+
+</body>
+</html>
+
+</body>
+</html>
