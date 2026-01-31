@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradiant Backgroundt</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 100vh;
+      }
+      .bg{
+        border: 2px solid black;
+        padding: 150px;
+
+        /* 
+        linear-gradient(direction, color1, color2, ...)
+        
+        Other directions:
+
+        to right → left to right
+        to left → right to left
+        to top right → diagonal
+        to bottom → top to bottom
+
+            You can add more than 2 colors: */
+
+        /* background: linear-gradient(to right, red, yellow, green, blue); */
+        /* background: linear-gradient(to left ,red ,yellow ,green,blue); */
+        /* background: linear-gradient(to top ,red ,yellow ,green,blue);
+        background: linear-gradient(to bottom ,red ,yellow ,green,blue); */
+        /* background: linear-gradient(to top right,red ,yellow ,green,blue);  */
+        /* background: linear-gradient(to top left,red ,yellow ); */ 
+
+    /* radial-gradient(shape, color1, color2, ...)
+      circle → circular
+      ellipse → elliptical */
+
+        /* Radial Gradient (circular or elliptical) */
+        /* background: radial-gradient(circle ,red,yellow,blue,black); */
+        /* background: radial-gradient(circle at bottom,#c2d09e,green); */
+
+        /* background: radial-gradient(ellipse,blue,yellow); */
+
+        /* Gradient with Transparency
+        You can make gradients fade using rgba or transparent: */
+
+        /* background: linear-gradient(to bottom ,rgba(255,0,0,0.5), rgba(0,0,255,0.8)); */
+
+        /* Gradiant + Fallback color */
+
+        background-color: #1e90ff; 
+        background: linear-gradient(to right, #1e90ff, #8a2be2);
+
+
+
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <h1>Hellow World</h1>
+    </div>
+  </body>
+</html>
