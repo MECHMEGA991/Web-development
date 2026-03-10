@@ -8,6 +8,23 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+        :root{
+            --primarycolor : white;
+            --secondarycolor : black;
+        }
+   
+        .dark-theme{
+            --primarycolor : black;
+            --secondarycolor : white;
+        } 
+
+        *{
+            background-color: var(--primarycolor);
+            color:var(--secondarycolor);
+            
+            
+        }
+
         nav {
             display: flex;
             justify-content: space-around;
@@ -22,10 +39,10 @@
         }
 
         .circle {
-            height: 50px;
-            width: 50px;
+            height: 68px;
+            width: 68px;
             background-color: yellow;
-            border: 3px solid black;
+            border: 2px solid var(--secondarycolor);
             border-radius: 50%;
             display: flex;
             font-size: 30px;
@@ -33,6 +50,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            color: var(--primarycolor);
         }
 
         .font {
@@ -56,13 +74,13 @@
         nav ul li a {
 
             text-decoration: none;
-            color: black;
+            color:var(--secondarycolor);
         }
 
         button {
-            color: black;
-            background-color: white;
-            border: 3px solid black;
+            color: var(--secondarycolor);
+            background-color: var(--primarycolor);
+            border: 3px solid var(--secondarycolor);
             border-radius: 5px;
             height: 40px;
             width: 100px;
@@ -71,6 +89,7 @@
         }
 
         .right {
+
             width: 300px;
             padding: 0px;
         }
@@ -105,6 +124,7 @@
         }
 
         .second {
+
             font-family: poppins;
             text-align: center;
             font-size: 30px;
@@ -117,9 +137,9 @@
             height: 52px;
             width: fit-content;
             font-size: 15px;
-            border: 1px solid rgb(255, 255, 255);
+            border: none;
             background-color: rgb(102, 176, 222);
-            color: white;
+            color: var(--primarycolor);
             font-weight: 600;
             padding: 10px;
             border-radius: 11px;
@@ -159,14 +179,15 @@
             text-align: center;
             height: 190px;
             width: 230px;
-            border: 1px solid white;
-            background-color: rgb(245, 240, 240);
+            border: 1px solid var(--secondarycolor); 
+            background-color: var(--primarycolor);
+
         }
 
         .box button {
             height: 30px;
             width: fit-content;
-            border: 1px solid white;
+            border: 1px solid var(--secondarycolor);
             background-color: rgb(58, 209, 58);
             border-radius: 10px;
             cursor: pointer;
@@ -184,7 +205,7 @@
 
         .box:hover {
             border: 1px solid rgb(102, 176, 222);
-            background-color: #e7f6ff;
+            background-color: var(--primarycolor);
             transition: 0.5s ease-in-out;
         }
         /* @media only screen and(max-width: 800px) {
@@ -203,7 +224,7 @@
     <header>
         <nav>
             <div class="icon">
-                <div class="circle"><i><b>UE</b></i></div>
+                <div class="circle"><i><b style="background-color: yellow; border:1px solid yellow; color:black;">UE</b></i></div>
                 <div class="font">
                     <b style="font-size: 28px;">Ultra Edit</b><br>
                     <span style="display: block; margin-left: 5px;">by Embarcadero</span>
@@ -222,7 +243,9 @@
                     <li><button><a href="/download"><b>Download</b></a></button></li>
                     <li class="img">English</li>
                     <li><span class="search">&#128269;</span></li>
-                </ul>
+                </div>
+                <div id="dark">
+                    <img style="height: 25px;" src="https://imgs.search.brave.com/ad4eqfVzBoDsTd5IVodEZumJu5dBqoYxqoz9KXoxyFw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni80OTQ5LzQ5NDk4/ODAucG5nP3NlbXQ9/YWlzX3doaXRlX2xh/YmVs" alt="">
             </div>
         </nav>
     </header>
@@ -247,7 +270,7 @@
 
         <div class="version">
             <div class="logo">
-                <div class="circle"><i><b>UE</b></i></div>
+                <div class="circle"><i><b  style="background-color: yellow; border: none;border:1px solid yellow; color:black;">UE</b></i></div>
             </div>
             <div class="ver_text">
                 <b style="font-size: 20px;">Download UltraEdit</b> v2025.0.0.39 (released 2025-08-06) | Latest changes
@@ -380,8 +403,27 @@
 
 
 
+
         </div>
     </main>
+    <script>
+
+        let dark=document.getElementById("dark");
+        let img=dark.querySelector("img")
+        console.log(dark)
+
+        dark.onclick = function(){
+            document.body.classList.toggle("dark-theme")
+            if(document.body.classList.contains("dark-theme")){
+                img.src="https://imgs.search.brave.com/LXZisikOiEak1lwlPUZxKxg6ypRu6tNDFT6G_qpwm5U/rs:fit:0:180:1:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvc2Nob29sLWZp/bGxlZC1saW5lLTEv/MzIvc3VuX2JyaWdo/dF9kYXJrLTEyOC5w/bmc"
+            }
+            else{
+                img.src="https://imgs.search.brave.com/ad4eqfVzBoDsTd5IVodEZumJu5dBqoYxqoz9KXoxyFw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni80OTQ5LzQ5NDk4/ODAucG5nP3NlbXQ9/YWlzX3doaXRlX2xh/YmVs"
+            }
+        }
+        
+        
+    </script>
 </body>
 
 </html>
